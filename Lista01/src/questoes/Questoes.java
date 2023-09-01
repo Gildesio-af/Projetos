@@ -7,19 +7,21 @@ public class Questoes {
 	public void questao1() {
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
-		System.out.print("Digite outro numero: ");
+		System.out.println("Digite outro numero: ");
 		int B = teclado.nextInt();
 		
 		if(A > 10) {
 			System.out.println("A > 10");
-			if(A + B == 20)
+		}
+		if(A + B == 20)
 				System.out.println("A + B == 20");
 			else
-				System.out.println("Numero nao valido");
-		}
+				System.out.print("Numero nao valido");
 	}
 	
+	
 	public void questao2() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -35,6 +37,7 @@ public class Questoes {
 	
 	
 	public void questao3() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -50,6 +53,7 @@ public class Questoes {
 	}
 	
 	public void questao4() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -66,6 +70,7 @@ public class Questoes {
 	}
 	
 	public void questao5() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -78,6 +83,7 @@ public class Questoes {
 	}
 	
 	public void questao6() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -94,6 +100,7 @@ public class Questoes {
 	}
 	
 	public void questao7() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -108,6 +115,7 @@ public class Questoes {
 	}
 	
 	public void questao8() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -123,6 +131,7 @@ public class Questoes {
 	}
 	
 	public void questao9() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -135,6 +144,7 @@ public class Questoes {
 	}
 	
 	public void questao10() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -149,6 +159,7 @@ public class Questoes {
 	}
 	
 	public void questao11(){
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -163,6 +174,7 @@ public class Questoes {
 	}
 
 	public void questao12(){
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -179,6 +191,7 @@ public class Questoes {
 	}
 
 	public void questao13(){
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -193,6 +206,7 @@ public class Questoes {
 	}
 	
 	public void questao14() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -207,6 +221,7 @@ public class Questoes {
 	}
 	
 	public void questao15() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -221,6 +236,7 @@ public class Questoes {
 	}
 	
 	public void questao16() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -235,6 +251,7 @@ public class Questoes {
 	}
 	
 	public void questao17() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -251,6 +268,7 @@ public class Questoes {
 	}
 	
 	public void questao18() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -263,6 +281,7 @@ public class Questoes {
 	}
 	
 	public void questao19() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
@@ -279,6 +298,7 @@ public class Questoes {
 	}
 	
 	public void questao20() {
+		System.out.println("==============================================================");
 		System.out.print("Digite um numero: ");
 		int A = teclado.nextInt();
 		System.out.print("Digite outro numero: ");
