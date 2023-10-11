@@ -1,14 +1,15 @@
 package pacote;
 
 import java.text.DecimalFormat;
+import java.util.Iterator;
 
 public class Utilidades {
 	public int somatorio (int[] vet) {
 		int soma = 0;
-		if(vet.length > 4) {
+		if(vet.length < 3) {
 			System.out.println("O somatorio nao pode ser realizado.");
 		}else {
-			for(int i = 2; i < vet.length - 3; i++) {
+			for(int i = 1; i < vet.length - 1; i++) {
 				soma += vet[i];
 			}
 		}
@@ -21,8 +22,8 @@ public class Utilidades {
 		}
 	}
 	
-	public int media(int vet[], int vet2[] ) {
-		int soma = 0, soma1 = 0, media = 0, denominador = 0;
+	public float media(int vet[], int vet2[] ) {
+		float media = 0f, soma = 0f, soma1 = 0f, denominador = 0f;
 		for(int i = 0; i < vet.length; i++) {
 			soma += vet[i];
 		}
@@ -31,14 +32,15 @@ public class Utilidades {
 		}
 		denominador = vet.length + vet2.length;
 		media = (soma + soma1)/denominador;
+		System.out.println(soma + " " + soma1 + " " + denominador + " "
+				+ media);
 		
 		return media;
 	}
 	
 	public float mediaPonderada(float vetNotas[], float vetPesos[]) {
-		float sNotaPeso = 0, sPesos = 0, mediaP;
-		DecimalFormat formatacao = new DecimalFormat("0.00");
-		if(vetNotas == vetPesos) {
+		float sNotaPeso = 0f, sPesos = 0f, mediaP = 0f;
+		if(vetNotas.length == vetPesos.length) {
 			for(int i = 0; i < vetNotas.length; i++) {
 			sNotaPeso += vetNotas[i] * vetPesos[i];
 			sPesos += vetPesos[i];
@@ -47,8 +49,6 @@ public class Utilidades {
 			System.out.println("Falta alguma informacao!");
 		}
 		mediaP = sNotaPeso / sPesos;
-		String nFormatado = formatacao.format(mediaP);
-		mediaP = Float.parseFloat(nFormatado);
 		return mediaP;
 	}
 	
@@ -72,27 +72,30 @@ public class Utilidades {
 		for(int i = 0; i < vet.length;i++) {
 			copia[i] = vet[i];
 		}
+		
+
 		return copia;
 	}
 	
 	public int[] ordenacaoCrescente (int vet[]) {
 		int ordenado[] = new int[vet.length];
 		int menor = 1000000000, y = 0;
-		vet[0] = menor;
-		for(int i = 1;  y < vet.length; i++) {
-			for(int j = 1; j < vet.length; j++) {
+		for(int i = 0;  i < vet.length; i++) {
+			for(int j = 0; j < vet.length; j++) {
 				if(vet[j] < menor) {
-					menor = vet[i];
+					menor = vet[j];					
 				}
 			}
+			ordenado[i] = menor;			
 		}
+
 		return ordenado;
 	}
 	
 	public boolean verificacaoOrdenacao(int vet[]) {
 		int menor = vet[0];
 		boolean teste = true;
-		for(int i = 0; i < vet.length; i++) {
+		for(int i = 1; i < vet.length; i++) {
 			if(menor < vet[i]) {
 				teste = true;
 			}else {
@@ -104,24 +107,20 @@ public class Utilidades {
 	}
 	
 	public int kMaiorValor(int vet[]) {
-		int inicial = vet[0], maior = 0;
-		for(int i = 0; i < vet.length; i++) {
-			if(inicial < vet[i]) {
+		int maior = vet[0];
+		for(int i = 1; i < vet.length; i++) {
+			if(maior < vet[i]) {
 				maior = vet[i];
-			}else {
-				maior = vet[0];
 			}
 		}		
 		return maior;
 	}
 	
 	public int kMenorValor(int vet[]) {
-		int inicial = vet[0], menor = 0;
-		for(int i = 0; i < vet.length; i++) {
-			if(inicial > vet[i]) {
+		int menor = vet[0];
+		for(int i = 1; i < vet.length ; i++) {
+			if( menor > vet[i]) {
 				menor = vet[i];
-			}else {
-				menor = vet[0];
 			}
 		}		
 		return menor;
@@ -168,11 +167,16 @@ public class Utilidades {
 	
 	public int[] buscaPorOcorrencia(int vet[], int vet2[]) {
 		int concatenado[] = new int[vet.length + vet2.length];
-		for(int i = 0; i < vet.length + vet2.length; i++) {
-			if(i < vet.length) {
-				concatenado[i] = vet[i]; 
-			}else
-				concatenado[i] = vet2.length;
+		for(int i = 0; i < vet.length ; i++) {
+			concatenado[i] = vet[i];
+		}
+		int segundaMetade = vet.length  ;
+		for (int i = 0; i < vet2.length; i++) {
+			concatenado[segundaMetade] = vet2[i];
+			segundaMetade++;
+		}
+		for (int i : concatenado) {
+			System.out.println(i);
 		}
 		return concatenado;
 	}
@@ -345,6 +349,134 @@ public class Utilidades {
 		}else {
 			
 		}
+	}
+	
+	public static void impElementosD(int linha) {
+		int vet1[] = new int[linha],  vet2[] = new int[linha];
+		int a = 1, b = linha;
+		for(int i = 0; i < linha; i++) {
+			vet1[i] = a;
+			a++;
+			vet2[i] = b;
+			b--;
+		}
+		
+			for(int i = 0; i < linha ; i++){
+				System.out.print(vet1[i] + "   ");
+			}
+			a = 1;
+			System.out.println();
+			for(int i = 0; i < linha - 2; i++) {
+				for(int j = 0; j < 1; j++) {
+						System.out.print(a + "   ");
+						a++;
+						for(int x = 0; x < linha - 2; x++){
+							System.out.print("*   ");
+						}
+						System.out.print(a + "   ");
+				}
+				System.out.println();
+			}
+			for(int t: vet2) {
+				System.out.print(t + "   ");
+			}
+	}
+
+	public static void impElementosE(int linha){
+
+		String vetIgual[] = new String[linha];
+		for(int i = 0; i < linha; i ++){
+			vetIgual[i] = "=";
+		}
+		vetIgual[(linha - 1) / 2] = "||";
+		if(linha % 2 != 0){
+			for(int i = 0; i < (linha - 1) / 2; i++){
+				for(int j = 0; j < (linha - 1) / 2; j++){
+					System.out.print("#   ");
+				}
+
+				System.out.print("||   ");
+
+				for(int k = 0; k < (linha - 1) / 2; k++){
+					System.out.print("!   ");
+				} 
+				System.out.println();
+			}
+
+			for(String l: vetIgual){
+				System.out.print(l + "   ");
+			}
+
+			System.out.println();
+
+			for(int i = 0; i < (linha - 1) / 2; i++){
+				for(int j = 0; j < (linha - 1) / 2; j++){
+					System.out.print("*   ");
+				}
+
+				System.out.print("||   ");
+
+				for(int k = 0; k < (linha - 1) / 2; k++){
+					System.out.print("%   ");
+				}
+				System.out.println();
+			}
+		}else{
+			vetIgual[(linha) / 2] = "||";
+			for(int i = 0; i < (linha - 1) / 2; i++){
+				for(int j = 0; j < (linha - 1) / 2; j++){
+					System.out.print("#   ");
+				}
+
+				System.out.print("||   ||   ");
+
+				for(int k = 0; k < (linha - 1) / 2; k++){
+					System.out.print("!   ");
+				} 
+				System.out.println();
+			}
+
+			for(String l: vetIgual){
+				System.out.print(l + "   ");
+			}
+
+			System.out.println();
+
+			for(int i = 0; i < (linha - 1) / 2; i++){
+				for(int j = 0; j < (linha - 1) / 2; j++){
+					System.out.print("*   ");
+				}
+
+				System.out.print("||   ||   ");
+
+				for(int k = 0; k < (linha - 1) / 2; k++){
+					System.out.print("%   ");
+				}
+				System.out.println();
+			}
+		}
+	}
+
+	public static void impElementosF(int linha){
+		int numFim = linha - 1, numInicio = 0;
+
+		String elementos[] = new String[linha];
+		for (int i = 0; i < linha; i++) {
+			
+			for (int j = 0; j < elementos.length; j++) {
+				elementos[j] = "*";
+			}
+			elementos[i] = Integer.toString(numInicio);
+				elementos[numFim] = Integer.toString(numFim);
+				numFim--;
+				numInicio++;
+
+			for (String string : elementos) {
+				System.out.print(string+ "   ");
+			}
+			System.out.println();
+		}
+		
 	}
 
 }
